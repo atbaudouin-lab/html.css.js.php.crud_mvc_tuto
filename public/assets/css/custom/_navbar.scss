@@ -1,0 +1,25 @@
+@import "utilitises";
+
+.header_nav {
+  @extend %bgc;
+  padding: 15px 10px;
+  .navbar {
+    gap: 30px;
+    @extend %dfcc;
+
+    a {
+      @extend %bgc;
+      padding: 10px 15px;
+      border: 1px solid #fff;
+      font-weight: 800;
+      border-radius: 5px;
+      transition: all 0.3s;
+      &:hover {
+        color: #000;
+        background-color: #fff;
+        outline: #fff;
+        cursor: pointer;
+      }
+    }
+  }
+}

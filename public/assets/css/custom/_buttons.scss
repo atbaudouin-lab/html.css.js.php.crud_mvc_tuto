@@ -1,0 +1,39 @@
+/*button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}*/
+
+.botn {
+  display: flex;
+  padding: 0.6rem 0.8rem;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+.btn-danger {
+  background: var(--warning-color);
+  color: white;
+}
+
+.btn-sm {
+  //padding: 0.5rem 0.75rem;
+  //font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
