@@ -1,30 +1,7 @@
 <?php
-require_once 'config/config.php';
 require_once 'public/functions/read.php';
 $cards = getCards();
 $nbrOfCard = count($cards);
-//showArray($cards);
-ob_start();
-?>
 
-<?php
-require_once 'public/components/nbrAnimals.php';
-
-foreach ($cards as $i => $card):
-    require 'public/components/card1.php';
-endforeach; ?>
-
-<?php
-$titre = 'Liste des cartes';
-$content = ob_get_clean();
-
-// 2. On récupère les messages depuis la session
-$error_message = $_SESSION['error_message'] ?? '';
-$success_message = $_SESSION['success_message'] ?? '';
-
-// 3. On vide la session pour ne pas réafficher le message au prochain rechargement
-unset($_SESSION['error_message']);
-unset($_SESSION['success_message']);
-
-require_once 'layout.php';
+require_once 'views/home.php';
 ?>

@@ -1,9 +1,4 @@
 <?php
-require_once 'config/config.php';
-require_once 'public/functions/read.php';
-$cards = getCards();
-$nbrOfCard = count($cards);
-//showArray($cards);
 ob_start();
 ?>
 
