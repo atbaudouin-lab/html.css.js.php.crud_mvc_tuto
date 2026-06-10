@@ -1,6 +1,6 @@
 <?php
 if (basename($_SERVER['PHP_SELF']) !== "index.php") {
-    require_once '../config/config.php';
+    require_once '../config/_config.php';
 }
 
 require_once FUNCTIONS_PATH . 'read.php';

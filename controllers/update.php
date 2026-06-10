@@ -1,5 +1,7 @@
 <?php
-require_once '../config/config.php';
-require_once FUNCTIONS_PATH.'read.php';
+if (in_array(basename($_SERVER['PHP_SELF']), ["update.php", "update.html"])) {
+    require_once '../config/_config.php';
+}
+require_once FUNCTIONS_PATH . 'read.php';
 $categories = getCategories();
-require_once VIEWS_PATH.'update.php';
+require_once VIEWS_PATH . 'update.php';

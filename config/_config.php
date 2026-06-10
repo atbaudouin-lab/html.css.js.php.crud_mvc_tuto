@@ -13,6 +13,7 @@ define('ROOT', $root . '/testmvc/');
 define('HOST', 'http://' . $host . '/testmvc/');
 
 define('CONTROLLERS_PATH', ROOT . 'controllers/');
+define('CLASSES_PATH', ROOT . 'classes/');
 define('MODELS_PATH', ROOT . 'models/');
 define('VIEWS_PATH', ROOT . 'views/');
 define('FUNCTIONS_PATH', ROOT . 'public/functions/');

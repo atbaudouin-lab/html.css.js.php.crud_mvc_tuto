@@ -2,23 +2,23 @@
 
 $navbar_items = [
     [
-        'link' => 'home.php',
+        'link' => 'home',
         'text' => 'Accueil',
     ],
     [
-        'link' => 'light.php',
+        'link' => 'light',
         'text' => 'Light',
     ],
     [
-        'link' => 'dark.php',
+        'link' => 'dark',
         'text' => 'Dark',
     ],
     [
-        'link' => 'edit.php',
+        'link' => 'edit',
         'text' => 'Modifier',
     ],
     [
-        'link' => 'create.php',
+        'link' => 'create',
         'text' => 'Ajouter',
     ],
 ];
