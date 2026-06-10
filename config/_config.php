@@ -6,23 +6,45 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-$root = $_SERVER['DOCUMENT_ROOT'];
-$host = $_SERVER['HTTP_HOST'];
+class MyAutoload
+{
 
-define('ROOT', $root . '/testmvc/');
-define('HOST', 'http://' . $host . '/testmvc/');
+    public static function start()
+    {
+        spl_autoload_register(array(__CLASS__,'autoload'));
 
-define('CONTROLLERS_PATH', ROOT . 'controllers/');
-define('CLASSES_PATH', ROOT . 'classes/');
-define('MODELS_PATH', ROOT . 'models/');
-define('VIEWS_PATH', ROOT . 'views/');
-define('FUNCTIONS_PATH', ROOT . 'public/functions/');
-define('ASSETS_PATH', HOST . 'public/assets/');
-define('CSS_PATH', ASSETS_PATH . 'css/');
-define('JS_PATH', ASSETS_PATH . 'js/');
-define('FONTS_PATH', ASSETS_PATH . 'fonts/');
-define('IMAGES_PATH', ASSETS_PATH . 'images/');
 
-define('COMPONENTS_PATH', ROOT . 'public/components/');
-define('CONFIG_PATH', ROOT . 'config/');
+        $root = $_SERVER['DOCUMENT_ROOT'];
+        $host = $_SERVER['HTTP_HOST'];
 
+        define('ROOT', $root . '/testmvc/');
+        define('HOST', 'http://' . $host . '/testmvc/');
+
+        define('CONTROLLERS_PATH', ROOT . 'controllers/');
+        define('CLASSES_PATH', ROOT . 'classes/');
+        define('MODELS_PATH', ROOT . 'models/');
+        define('VIEWS_PATH', ROOT . 'views/');
+        define('FUNCTIONS_PATH', ROOT . 'public/functions/');
+        define('ASSETS_PATH', HOST . 'public/assets/');
+        define('CSS_PATH', ASSETS_PATH . 'css/');
+        define('JS_PATH', ASSETS_PATH . 'js/');
+        define('FONTS_PATH', ASSETS_PATH . 'fonts/');
+        define('IMAGES_PATH', ASSETS_PATH . 'images/');
+
+        define('COMPONENTS_PATH', ROOT . 'public/components/');
+        define('CONFIG_PATH', ROOT . 'config/');
+
+    }
+
+    public static function autoload($class)
+    {
+        if (file_exists(CLASSES_PATH . $class . '.php')) {
+            include_once(CLASSES_PATH . $class . '.php');
+        } else if (file_exists(MODELS_PATH . $class . '.php')) {
+            include_once(MODELS_PATH . $class . '.php');
+        } else if (file_exists(CONTROLLERS_PATH . $class . '.php')) {
+            include_once(CONTROLLERS_PATH . $class . '.php');
+        }
+    }
+
+}

@@ -1,9 +1,9 @@
 <?php
 require_once 'config/_config.php';
 
+MyAutoload::start();
+
 $request = $_GET['r'];
 
-require_once CLASSES_PATH.'Router.php';
-
-$routeur = new Routeur($request);
+$routeur = new Router($request);
 $routeur->renderController();

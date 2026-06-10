@@ -1,23 +1,22 @@
 <?php
-
-class Routeur
+class Router
 {
     private $request;
     private $routes = [
-        '' => 'home',
-        'home.html' => 'home',
+        '' => ['controller' => 'Home', 'method' => 'showHome'],
+        'home.html' => ['controller' => 'Home', 'method' => 'showHome'],
+        'create.html' => ['controller' => 'Home', 'method' => 'showCreate'],
+        'edit.html' => ['controller' => 'Home', 'method' => 'showEdit'],
+        'dark.html' => ['controller' => 'Home', 'method' => 'showDark'],
+        'light.html' => ['controller' => 'Home', 'method' => 'showLight'],
+        'delete.html' => ['controller' => 'Home', 'method' => 'showDelete'],
+        'update.html' => ['controller' => 'Home', 'method' => 'showUpdate'],
         'home.php' => 'home',
-        'create.html' => 'create',
         'create.php' => 'create',
-        'edit.html' => 'edit',
         'edit.php' => 'edit',
-        'dark.html' => 'dark',
         'dark.php' => 'dark',
-        'light.html' => 'light',
         'light.php' => 'light',
-        'delete.html' => 'delete',
         'delete.php' => 'delete',
-        'update.html' => 'update',
         'update.php' => 'update',
     ];
 
@@ -31,8 +30,11 @@ class Routeur
         $request = $this->request;
 
         if (key_exists($request, $this->routes)) {
-            $route = $this->routes[$request];
-            require CONTROLLERS_PATH . $route . ".php";
+            $controller = $this->routes[$request]['controller'];
+            $method = $this->routes[$request]['method'];
+
+            $currentController = new $controller();
+            $currentController->$method();
         } else {
             echo '404';
         }
