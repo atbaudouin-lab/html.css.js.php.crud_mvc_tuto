@@ -3,7 +3,7 @@ ob_start();
 ?>
 
 <div class="form-container">
-    <form action="public/functions/create.php" method="post" enctype="multipart/form-data" class="form-column">
+    <form action="../public/functions/create.php" method="post" enctype="multipart/form-data" class="form-column">
         <div class="form-group">
             <label for="name">Nom :</label>
             <input type="text" id="nom" name="name" placeholder="Nom" required>

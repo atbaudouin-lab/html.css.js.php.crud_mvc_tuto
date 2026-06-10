@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($name) || empty($description) || empty($category)) {
         // 2. On stocke le message dans la session
         $_SESSION['error_message'] = "Veuillez remplir tous les champs";
-        header("Location: ../../create.php");
+        header("Location: ../../controllers/create.php");
         exit();
     }
 
@@ -30,6 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['error_message'] = "Erreur dans la fonction : " . $e->getMessage();
     }
 
-    header("Location: ../../create.php");
+    header("Location: ../../controllers/create.php");
     exit();
 }

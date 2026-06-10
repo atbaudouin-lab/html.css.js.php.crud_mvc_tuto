@@ -6,6 +6,7 @@
         <div>
             <form action="delete.php" method="POST">
                 <input type="hidden" name="id" value="<?= htmlspecialchars($card['id']) ?>">
+                <input type="hidden" name="redirect_to" value="<?= basename($_SERVER['PHP_SELF']) ?>">
                 <!--<input type="button" name="supprimer" value="Supprimer" class="delete"
                     onclick="openDeleteModal(this.form)">-->
 
@@ -16,6 +17,7 @@
             </form>
             <form action="update.php" method="post">
                 <input type="hidden" name="id" value="<?= htmlspecialchars($card['id']) ?>">
+                <input type="hidden" name="redirect_to" value="<?= basename($_SERVER['PHP_SELF']) ?>">
                 <!-- <input type="submit" name="modifier" value="Modifier" class="update"> -->
 
 

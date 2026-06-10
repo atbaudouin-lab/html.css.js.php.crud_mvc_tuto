@@ -14,12 +14,11 @@ $navbar_items = [
         'text' => 'Dark',
     ],
     [
-        'link' => 'create.php',
-        'text' => 'Ajouter',
-    ],
-    [
         'link' => 'edit.php',
         'text' => 'Modifier',
     ],
-
+    [
+        'link' => 'create.php',
+        'text' => 'Ajouter',
+    ],
 ];

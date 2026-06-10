@@ -9,15 +9,15 @@
 
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">-->
 
-    <link rel="preload" href="public/assets/fonts/inter/Inter-VariableFont_slnt,wght.woff2" as="font" type="font/woff2"
+    <link rel="preload" href="<?= FONTS_PATH ?>inter/Inter-VariableFont_slnt,wght.woff2" as="font" type="font/woff2"
         crossorigin>
-    <link rel="preload" href="public/assets/fonts/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2"
+    <link rel="preload" href="<?= FONTS_PATH ?>font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2"
         crossorigin>
-    <link rel="preload" href="public/assets/fonts/font-awesome/webfonts/fa-regular-400.woff2" as="font"
+    <link rel="preload" href="<?= FONTS_PATH ?>font-awesome/webfonts/fa-regular-400.woff2" as="font"
         type="font/woff2" crossorigin>
-    <link rel="preload" href="public/assets/fonts/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2"
+    <link rel="preload" href="<?= FONTS_PATH ?>font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2"
         crossorigin>
-    <link rel="stylesheet" href="public/assets/fonts/font-awesome/css/all.min.css">
+    <link rel="stylesheet" href="<?= FONTS_PATH ?>font-awesome/css/all.min.css">
 
 
 

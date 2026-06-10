@@ -5,9 +5,18 @@ ob_start();
 <?php
 
 // Initialiser les variables pour éviter les erreurs
-$name = $categori = $description = '';
+$name = $categori = $description = $redirect_to = '';
 
 if (isset($_POST["id"])) {
+    // AJOUT : On récupère la page d'origine, ou 'edit.php' par défaut si elle est absente
+    $redirect_to = htmlspecialchars($_POST['redirect_to'] ?? 'edit.php');
+
+    // Sécurité (Optionnel mais recommandé) : On valide que la page demandée fait partie des choix autorisés
+    $allowed_pages = ['edit.php', 'light.php', 'dark.php'];
+    if (!in_array($redirect_to, $allowed_pages)) {
+        $redirect_to = 'edit.php';
+    }
+
     $id = (int) trim($_POST["id"]);
     $carte = getCard($id);
     if ($carte) {
@@ -21,8 +30,9 @@ if (isset($_POST["id"])) {
 }
 ?>
 <div class="form-container">
-    <form action="<?= FUNCTIONS_PATH ?>update.php" method="post" enctype="multipart/form-data" class="form-column">
+    <form action="../public/functions/update.php" method="post" enctype="multipart/form-data" class="form-column">
         <input type="hidden" name="id" value="<?= $id ?>">
+        <input type="hidden" name="redirect_to" value="<?= $redirect_to ?>">
 
         <div class="form-group">
             <label for="name">Nom :</label>
@@ -64,5 +74,5 @@ $success_message = $_SESSION['success_message'] ?? '';
 unset($_SESSION['error_message']);
 unset($_SESSION['success_message']);
 
-require_once VIEWS_PATH.'layout.php';
+require_once VIEWS_PATH . 'layout.php';
 ?>
