@@ -2,7 +2,7 @@
 
 $navbar_items = [
     [
-        'link' => '/testmvc/',
+        'link' => 'home.php',
         'text' => 'Accueil',
     ],
     [

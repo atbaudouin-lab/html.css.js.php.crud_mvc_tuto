@@ -3,10 +3,10 @@ ob_start();
 ?>
 
 <?php
-require_once 'public/components/nbrAnimals.php';
+require_once COMPONENTS_PATH.'nbrAnimals.php';
 
 foreach ($cards as $i => $card):
-    require 'public/components/card1.php';
+    require COMPONENTS_PATH.'card1.php';
 endforeach; ?>
 
 <?php
@@ -21,5 +21,5 @@ $success_message = $_SESSION['success_message'] ?? '';
 unset($_SESSION['error_message']);
 unset($_SESSION['success_message']);
 
-require_once 'layout.php';
+require_once VIEWS_PATH.'layout.php';
 ?>

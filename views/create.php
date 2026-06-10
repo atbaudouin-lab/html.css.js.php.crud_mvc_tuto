@@ -1,11 +1,4 @@
 <?php
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-require_once 'public/functions/read.php';
-$categories = getCategories();
 ob_start();
 ?>
 
@@ -50,5 +43,5 @@ $success_message = $_SESSION['success_message'] ?? '';
 unset($_SESSION['error_message']);
 unset($_SESSION['success_message']);
 
-require_once 'layout.php';
+require_once VIEWS_PATH.'layout.php';
 ?>

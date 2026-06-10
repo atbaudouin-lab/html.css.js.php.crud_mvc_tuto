@@ -4,13 +4,14 @@
     <div class="contient">
         <p><?= htmlspecialchars($card['description']) ?> </p>
         <div>
-            <form action="public/functions/delete.php" method="post">
+            <form action="delete.php" method="POST">
                 <input type="hidden" name="id" value="<?= htmlspecialchars($card['id']) ?>">
                 <!--<input type="button" name="supprimer" value="Supprimer" class="delete"
                     onclick="openDeleteModal(this.form)">-->
 
-                <button type="button" class="botn btn-danger btn-sm delete" name="supprimer" onclick="openDeleteModal(this.form)">
-                            <i class="fas fa-trash"></i> Supprimer
+                <button type="button" class="botn btn-danger btn-sm delete" name="supprimer"
+                    onclick="openDeleteModal(this.form)">
+                    <i class="fas fa-trash"></i> Supprimer
                 </button>
             </form>
             <form action="update.php" method="post">

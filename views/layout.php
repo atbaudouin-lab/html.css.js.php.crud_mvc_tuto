@@ -21,7 +21,7 @@
 
 
 
-    <link rel="stylesheet" href="public/assets/css/style.css">
+    <link rel="stylesheet" href="<?= CSS_PATH ?>style.css">
 </head>
 
 <body>
@@ -31,7 +31,7 @@
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
-    require_once 'header.php';
+    require_once VIEWS_PATH . 'header.php';
 
     // Messages de notification
     if ($error_message): ?>
@@ -56,7 +56,7 @@
         <?= $content ?>
     </div>
 
-    <?php require_once 'footer.php'; ?>
+    <?php require_once VIEWS_PATH . 'footer.php'; ?>
 
     <div id="deleteModal" class="modal-overlay">
         <div class="modal-box">
@@ -69,7 +69,7 @@
         </div>
     </div>
 
-    <script src="public/assets/js/script.js"></script>
+    <script src="<?= JS_PATH ?>script.js"></script>
 </body>
 
 </html>

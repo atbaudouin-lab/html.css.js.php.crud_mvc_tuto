@@ -1,20 +1,11 @@
 <?php
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-require_once 'public/functions/read.php';
-$cards = getCategorieCards("dark");
-$nbrOfCard = count($cards);
-//showArray($cards);
 ob_start();
 ?>
 
 <?php
-require_once 'public/components/nbrAnimals.php';
+require_once COMPONENTS_PATH.'nbrAnimals.php';
 foreach ($cards as $i => $card):
-    require 'public/components/card2.php';
+    require COMPONENTS_PATH.'card2.php';
 endforeach; ?>
 
 
@@ -33,5 +24,5 @@ $success_message = $_SESSION['success_message'] ?? '';
 unset($_SESSION['error_message']);
 unset($_SESSION['success_message']);
 
-require_once 'layout.php';
+require_once VIEWS_PATH.'layout.php';
 ?>

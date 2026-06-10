@@ -1,12 +1,4 @@
 <?php
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-require_once 'public/functions/read.php';
-$categories = getCategories();
-//showArray($categories);
 ob_start();
 ?>
 
@@ -29,7 +21,7 @@ if (isset($_POST["id"])) {
 }
 ?>
 <div class="form-container">
-    <form action="public/functions/update.php" method="post" enctype="multipart/form-data" class="form-column">
+    <form action="<?= FUNCTIONS_PATH ?>update.php" method="post" enctype="multipart/form-data" class="form-column">
         <input type="hidden" name="id" value="<?= $id ?>">
 
         <div class="form-group">
@@ -48,7 +40,8 @@ if (isset($_POST["id"])) {
                 <?php foreach ($categories as $category): ?>
                     <option value="<?= htmlspecialchars($category['category']) ?>"
                         <?= $categori === htmlspecialchars($category['category']) ? "selected" : "" ?>>
-                        <?= htmlspecialchars($category['category']) ?></option>
+                        <?= htmlspecialchars($category['category']) ?>
+                    </option>
                 <?php endforeach; ?>
             </select>
         </div>
@@ -71,5 +64,5 @@ $success_message = $_SESSION['success_message'] ?? '';
 unset($_SESSION['error_message']);
 unset($_SESSION['success_message']);
 
-require_once 'layout.php';
+require_once VIEWS_PATH.'layout.php';
 ?>
